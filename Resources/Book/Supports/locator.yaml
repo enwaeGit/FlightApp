@@ -1,0 +1,16 @@
+book_menu:  com.example.myapplication:id/book
+oneway_tab: xpath=//android.support.v7.app.ActionBar.Tab[@content-desc="One Way"]
+from_box: com.example.myapplication:id/spinnerFrom
+to_box: com.example.myapplication:id/spinnerTo
+class_box: com.example.myapplication:id/spinnerClass
+startdate_box: com.example.myapplication:id/textStartDate
+selectdate_ok: xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]
+enddate_box: com.example.myapplication:id/textEndDate
+flight_radio: com.example.myapplication:id/radioButtonFlight
+hotel_radio: com.example.myapplication:id/radioButtonFlightHotel
+plusday_radio: com.example.myapplication:id/checkBoxDay
+exe_book: com.example.myapplication:id/book_flight
+confirm_label: com.example.myapplication:id/textView6
+price1_select: com.example.myapplication:id/price1
+exe_confirm: com.example.myapplication:id/confirm_order
+flightnumb_label: com.example.myapplication:id/checkedTextView

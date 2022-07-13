@@ -1,0 +1,5 @@
+sign_in: com.example.myapplication:id/login
+user_box: com.example.myapplication:id/username
+pass_box: com.example.myapplication:id/password
+exe_sign: com.example.myapplication:id/signIn
+user_label: com.example.myapplication:id/textView

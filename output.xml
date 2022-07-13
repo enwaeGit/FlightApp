@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.2 on win32)" generated="20220713 12:14:12.799" rpa="false" schemaversion="3">
+<suite id="s1" name="flightApp" source="C:\Junior\QA\FlightApp\flightApp.robot">
+<test id="s1-t1" name="Starting test automation for flight application" line="17">
+<kw name="Open Flight Application" library="main">
+<doc>Open flight application</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220713 12:14:13.207" endtime="20220713 12:14:25.057"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:13.206" endtime="20220713 12:14:25.057"/>
+</kw>
+<kw name="Verify Flight Application Homepage" library="main">
+<doc>Verify flight application</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${locator_main}</arg>
+<arg>3s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:25.060" endtime="20220713 12:14:25.720"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:25.060" endtime="20220713 12:14:25.720"/>
+</kw>
+<kw name="User Should Sign In Application" library="loginPage">
+<arg>user=${username_valid}</arg>
+<arg>password=${password_valid}</arg>
+<doc>Proccess login user</doc>
+<kw name="Entry Login Page" library="loginKeyword">
+<doc>Entry sign in page</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${sign_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:25.734" level="INFO">Clicking element 'com.example.myapplication:id/login'.</msg>
+<status status="PASS" starttime="20220713 12:14:25.727" endtime="20220713 12:14:25.898"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:25.726" endtime="20220713 12:14:25.898"/>
+</kw>
+<kw name="Verify Login Page" library="loginKeyword">
+<doc>Need to verify login page</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${user_box}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:25.900" endtime="20220713 12:14:26.731"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:25.898" endtime="20220713 12:14:26.731"/>
+</kw>
+<kw name="User Login Application" library="loginKeyword">
+<arg>user=${user}</arg>
+<arg>password=${password}</arg>
+<doc>login user</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${user_box}</arg>
+<arg>${user}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:26.735" level="INFO">Typing text 'support@ngendigital.com' into text field 'com.example.myapplication:id/username'</msg>
+<status status="PASS" starttime="20220713 12:14:26.732" endtime="20220713 12:14:26.798"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${pass_box}</arg>
+<arg>${password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:26.803" level="INFO">Typing text 'abc123' into text field 'com.example.myapplication:id/password'</msg>
+<status status="PASS" starttime="20220713 12:14:26.798" endtime="20220713 12:14:27.331"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${exe_sign}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:27.335" level="INFO">Clicking element 'com.example.myapplication:id/signIn'.</msg>
+<status status="PASS" starttime="20220713 12:14:27.331" endtime="20220713 12:14:27.968"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:26.731" endtime="20220713 12:14:27.968"/>
+</kw>
+<kw name="Verify Login Success" library="loginKeyword">
+<doc>Need to verify if login success</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${user_label}</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:27.969" endtime="20220713 12:14:28.651"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:27.968" endtime="20220713 12:14:28.651"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:25.725" endtime="20220713 12:14:28.651"/>
+</kw>
+<kw name="User Search Flight Number" library="searchPage">
+<arg>flight_numb=${flightnumb_valid}</arg>
+<doc>Proccess search flight</doc>
+<kw name="Verify Search Menu" library="searchKeyword">
+<doc>Need to verify search menu is available</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${search_menu}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:28.654" endtime="20220713 12:14:28.707"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:28.653" endtime="20220713 12:14:28.708"/>
+</kw>
+<kw name="Entry Search Page" library="searchKeyword">
+<doc>Entry search page</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${search_menu}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:28.712" level="INFO">Clicking element 'com.example.myapplication:id/search_flight'.</msg>
+<status status="PASS" starttime="20220713 12:14:28.708" endtime="20220713 12:14:28.794"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:28.708" endtime="20220713 12:14:28.794"/>
+</kw>
+<kw name="Verify Search Page" library="searchKeyword">
+<doc>Need to verify search page</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${search_box}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:28.795" endtime="20220713 12:14:29.876"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:28.794" endtime="20220713 12:14:29.876"/>
+</kw>
+<kw name="User Search Flight Number" library="searchKeyword">
+<arg>${flight_numb}</arg>
+<doc>Proccess to search flight number</doc>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${search_box}</arg>
+<arg>${number}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:29.881" level="INFO">Typing text 'DA935' into text field 'com.example.myapplication:id/flight_number'</msg>
+<status status="PASS" starttime="20220713 12:14:29.877" endtime="20220713 12:14:29.956"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${exe_search}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:29.960" level="INFO">Clicking element 'com.example.myapplication:id/searchFlight'.</msg>
+<status status="PASS" starttime="20220713 12:14:29.956" endtime="20220713 12:14:30.558"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:29.876" endtime="20220713 12:14:30.559"/>
+</kw>
+<kw name="Verify Flight Number" library="searchKeyword">
+<arg>${flight_numb}</arg>
+<doc>Need to verify flight number document</doc>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>${flight_confirm}</arg>
+<arg>${number[2:]}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220713 12:14:30.567" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TableLayout/android.widget.TableRow[2]/android.widget.TextView[1]' contains text '935'.</msg>
+<status status="PASS" starttime="20220713 12:14:30.559" endtime="20220713 12:14:31.790"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:30.559" endtime="20220713 12:14:31.790"/>
+</kw>
+<kw name="Back to User Page" library="searchKeyword">
+<doc>Need to back to user page, to exe other test</doc>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" starttime="20220713 12:14:31.791" endtime="20220713 12:14:32.424"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="PASS" starttime="20220713 12:14:32.424" endtime="20220713 12:14:33.594"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:31.791" endtime="20220713 12:14:33.595"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:28.652" endtime="20220713 12:14:33.595"/>
+</kw>
+<kw name="User Booking Flight" library="bookPage">
+<doc>User will booking flight</doc>
+<kw name="Verify Book Menu" library="bookKeyword">
+<doc>Need to verify booking menu is available</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${book_menu}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:33.596" endtime="20220713 12:14:34.162"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:33.596" endtime="20220713 12:14:34.162"/>
+</kw>
+<kw name="Entry Booking Page" library="bookKeyword">
+<doc>Entry booking page</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${book_menu}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:34.167" level="INFO">Clicking element 'com.example.myapplication:id/book'.</msg>
+<status status="PASS" starttime="20220713 12:14:34.163" endtime="20220713 12:14:34.266"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:34.163" endtime="20220713 12:14:34.266"/>
+</kw>
+<kw name="Verify Booking Page" library="bookKeyword">
+<doc>Need to verify booking page</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${oneway_tab}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:34.266" endtime="20220713 12:14:35.322"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:34.266" endtime="20220713 12:14:35.323"/>
+</kw>
+<kw name="User Booking Flight" library="bookKeyword">
+<doc>User fill data to proccess booking flight</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${startdate_box}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:35.325" level="INFO">Clicking element 'com.example.myapplication:id/textStartDate'.</msg>
+<status status="PASS" starttime="20220713 12:14:35.323" endtime="20220713 12:14:35.392"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${selectdate_ok}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:35.392" endtime="20220713 12:14:36.344"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${selectdate_ok}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:36.347" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]'.</msg>
+<status status="PASS" starttime="20220713 12:14:36.345" endtime="20220713 12:14:36.562"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${enddate_box}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:36.569" level="INFO">Clicking element 'com.example.myapplication:id/textEndDate'.</msg>
+<status status="PASS" starttime="20220713 12:14:36.563" endtime="20220713 12:14:37.224"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${selectdate_ok}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:37.224" endtime="20220713 12:14:38.008"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${selectdate_ok}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:38.012" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]'.</msg>
+<status status="PASS" starttime="20220713 12:14:38.008" endtime="20220713 12:14:38.209"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${flight_radio}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:38.215" level="INFO">Clicking element 'com.example.myapplication:id/radioButtonFlight'.</msg>
+<status status="PASS" starttime="20220713 12:14:38.210" endtime="20220713 12:14:38.857"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${exe_book}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:38.861" level="INFO">Clicking element 'com.example.myapplication:id/book_flight'.</msg>
+<status status="PASS" starttime="20220713 12:14:38.858" endtime="20220713 12:14:39.525"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:35.323" endtime="20220713 12:14:39.525"/>
+</kw>
+<kw name="Confirm Booking Flight" library="bookKeyword">
+<doc>Need to confirm ata</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${confirm_label}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:39.525" endtime="20220713 12:14:40.264"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:39.525" endtime="20220713 12:14:40.264"/>
+</kw>
+<kw name="Select Price For Flight" library="bookKeyword">
+<doc>Need to select price</doc>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${price1_select}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:40.270" level="INFO">Clicking element 'com.example.myapplication:id/price1'.</msg>
+<status status="PASS" starttime="20220713 12:14:40.265" endtime="20220713 12:14:40.966"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${exe_confirm}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220713 12:14:40.973" level="INFO">Clicking element 'com.example.myapplication:id/confirm_order'.</msg>
+<status status="PASS" starttime="20220713 12:14:40.966" endtime="20220713 12:14:41.098"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:40.264" endtime="20220713 12:14:41.099"/>
+</kw>
+<kw name="Verify Booking Flight" library="bookKeyword">
+<doc>Need to verify if booking is success</doc>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${flightnumb_label}</arg>
+<arg>5s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220713 12:14:41.100" endtime="20220713 12:14:41.807"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:41.100" endtime="20220713 12:14:41.807"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:33.595" endtime="20220713 12:14:41.807"/>
+</kw>
+<kw name="Close Flight Application" library="main">
+<doc>Close flight application</doc>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220713 12:14:41.808" endtime="20220713 12:14:42.814"/>
+</kw>
+<status status="PASS" starttime="20220713 12:14:41.808" endtime="20220713 12:14:42.814"/>
+</kw>
+<doc>Start test automation</doc>
+<status status="PASS" starttime="20220713 12:14:13.205" endtime="20220713 12:14:42.817"/>
+</test>
+<doc>Test automation for flight application</doc>
+<status status="PASS" starttime="20220713 12:14:12.801" endtime="20220713 12:14:42.821"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="flightApp">flightApp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
